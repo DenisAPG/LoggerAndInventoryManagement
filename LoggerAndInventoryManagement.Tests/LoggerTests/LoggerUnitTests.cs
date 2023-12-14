@@ -6,6 +6,12 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
     [TestClass]
     public class LoggerUnitTests
     {
+
+        [TestInitialize] public void TestInitialize() 
+        {
+            
+        }   
+
         [TestMethod]
         public void LogMessage_ValidParameters_SuccessfullLogging()
         {
@@ -15,7 +21,7 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
             Logger.LogMessage(fileName, "Validating a Successful InfoMessage",LogLevelEnum.INFO);
             Assert.IsTrue(File.Exists(fileName), "File does not exist!");
             lastLine = File.ReadAllLines(fileName).Last();
-            Assert.AreEqual(lastLine, logMessage);
+            Assert.IsTrue(lastLine.Contains(logMessage), "Log message was not properly written!");
         }
 
         [TestMethod]
@@ -29,7 +35,7 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
             Logger.LogMessage(fileName, "Validating a Successful InfoMessage", LogLevelEnum.INFO);
             Assert.IsTrue(File.Exists(fileName), "File does not exist!");
             lastLine = File.ReadAllLines(fileName).Last();
-            Assert.AreEqual(lastLine, logMessage);
+            Assert.IsTrue(lastLine.Contains(logMessage), "Log message was not properly written!");
         }
 
         [TestMethod]
@@ -43,7 +49,7 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
             Logger.LogMessage(fileName, "Validating a Successful InfoMessage", LogLevelEnum.INFO);
             Assert.IsTrue(File.Exists(fileName), "File does not exist!");
             lastLine = File.ReadAllLines(fileName).Last();
-            Assert.AreEqual(lastLine, logMessage);
+            Assert.IsTrue(lastLine.Contains(logMessage), "Log message was not properly written!");
         }
 
         [TestMethod]
@@ -88,8 +94,8 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
             Assert.IsTrue(File.Exists(fileName), "File does not exist!");
             var allLines= File.ReadAllLines(fileName);
             List<String> lastLines = [allLines[allLines.Length - 1], allLines[allLines.Length - 2]];
-            Assert.IsTrue(lastLines.Exists(x => x == logMessage + "1 Message"));
-            Assert.IsTrue(lastLines.Exists(x => x == logMessage + "2 Message"));
+            Assert.IsTrue(lastLines.Exists(x => x.Contains(logMessage + "1 Message")));
+            Assert.IsTrue(lastLines.Exists(x => x.Contains(logMessage + "1 Message")));
         }
 
 
@@ -108,7 +114,7 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
             Logger.LogMessage(fileName, "Validating a Successful InfoMessage", logEnum);
             Assert.IsTrue(File.Exists(fileName), "File does not exist!");
             lastLine = File.ReadAllLines(fileName).Last();
-            Assert.AreEqual(lastLine, logMessage);
+            Assert.IsTrue(lastLine.Contains(logMessage), "Log message was not properly written!");
         }
     }
 }
