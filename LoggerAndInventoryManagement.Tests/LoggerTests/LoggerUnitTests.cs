@@ -58,7 +58,7 @@ namespace LoggerAndInventoryManagement.Tests.LoggerTests
                 File.Create(fileName);
                 File.SetAttributes(fileName, FileAttributes.ReadOnly);
             }
-                Assert.ThrowsException<UnauthorizedAccessException>(() => Logger.LogMessage(fileName, logMessage, LogLevelEnum.INFO));
+            Assert.ThrowsException<UnauthorizedAccessException>(() => Logger.LogMessage(fileName, logMessage, LogLevelEnum.INFO));
         }
 
         [TestMethod]
