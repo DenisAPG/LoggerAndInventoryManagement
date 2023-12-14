@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LoggerAndInventoryManagement.Core.InventoryManagement
 {
-    internal class Product
+    public class Product
     {
+        public string Name { get; set; }
+        public float Price { get; set; }
+        public int stock {  get; set; }
+
     }
 }

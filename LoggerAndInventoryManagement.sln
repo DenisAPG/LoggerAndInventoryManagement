@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerAndInventoryManagemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerAndInventoryManagement.Core", "LoggerAndInventoryManagement.Core\LoggerAndInventoryManagement.Core.csproj", "{634F6AC4-5E31-4C72-A306-236165FCFC20}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logs", "Logs", "{D7ECDDC5-7B10-44C0-AC57-A829BBCABF5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
