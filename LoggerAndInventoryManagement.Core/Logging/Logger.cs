@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace LoggerAndInventoryManagement.Core.Logging
 {
-    internal class Logger
+    public enum LogLevelEnum
     {
+        INFO,
+        DEBUG,
+        WARN,
+        ERROR,
+        FATAL
+    }
+
+    public static class Logger
+    {
+        public static void LogMessage(String fileName,String message, LogLevelEnum logLevel)
+        {
+
+        }
     }
 }

@@ -17,8 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LoggerTests\" />
-    <Folder Include="InventoryManagementTests\" />
+    <ProjectReference Include="..\LoggerAndInventoryManagement.Core\LoggerAndInventoryManagement.Core.csproj" />
   </ItemGroup>
 
 </Project>
